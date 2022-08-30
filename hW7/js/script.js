@@ -1,26 +1,28 @@
 let someStr = prompt('Введите какое-то слово')
 
-while (someStr == false || someStr === null) {
+while (someStr == !Boolean || someStr === null) {
     someStr = prompt('Введите какое-то слово')
 }
 
 let someNum = +prompt('Введите какое-то число')
 
-while (someNum == false || someNum === null) {
+while (someNum == !Boolean || someNum === null) {
     someNum = prompt('Введите число!')
 }
 
+let someSide = ''
 
-if (someStr.length >= someNum) {
-    console.log(someStr.substring(0, someNum))
-} else {
-    
-    const someSide = confirm('В какую сторону будет заполняться пустота? Ок - лево / Отмена - право')
+if(someStr.length < someNum) {
+    someSide = confirm('В какую сторону будет заполняться пустота? Ок - лево / Отмена - право')
+}
 
-    console.log(dd(someStr, someNum, '*', someSide))
+const funcResult = padString(someStr, someNum, '*', someSide)
+console.log(funcResult)
 
-    function dd(str, num, symbol, side) {
-
+function padString(str, num, symbol, side) {
+    if (str.length >= num) {
+        return str.substring(0, someNum)
+    } else {
         let result = ''
 
         for(let i = 0; num - str.length > i; i++) {
