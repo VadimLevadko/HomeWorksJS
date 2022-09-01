@@ -1,13 +1,13 @@
 let someStr = prompt('Введите какое-то слово')
 
-while (someStr == !Boolean || someStr === null) {
+while (!Boolean(someStr)) {
     someStr = prompt('Введите какое-то слово')
 }
 
 let someNum = +prompt('Введите какое-то число')
 
-while (someNum == !Boolean || someNum === null) {
-    someNum = prompt('Введите число!')
+while (!Boolean(someNum)) {
+    someNum = +prompt('Введите число!')
 }
 
 let someSide = ''
