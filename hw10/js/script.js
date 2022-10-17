@@ -71,34 +71,40 @@ products.sort(sortByField('quantity', 'desc'))
 
 function sortByField(fieledName, sortType) {
     return function(a, b) {
-        if(sortType === 'desc') {
-            if(fieledName === 'quantity') {
-                if(a.quantity < b.quantity) {
-                    return -1;
+        switch(sortType) {
+            case 'desc':
+                if(fieledName === 'quantity') {
+                    if(a.quantity < b.quantity) {
+                        return -1;
+                    }
+                } else if(fieledName === 'price') {
+                    if(a.price < b.price) {
+                        return -1;
+                    }
+                } else if(fieledName === 'name') {
+                    if(a.name < b.name) {
+                        return -1;
+                    }
                 }
-            } else if(fieledName === 'price') {
-                if(a.price < b.price) {
-                    return -1;
+            break;
+
+            case 'asc':
+                if(fieledName === 'quantity') {
+                    if(a.quantity > b.quantity) {
+                        return -1;
+                    }
+                } else if(fieledName === 'price') {
+                    if(a.price > b.price) {
+                        return -1;
+                    }
+                } else if(fieledName === 'name') {
+                    if(a.name > b.name) {
+                        return -1;
+                    }
                 }
-            } else if(fieledName === 'name') {
-                if(a.name < b.name) {
-                    return -1;
-                }
-            }
-        } else if(sortType === 'asc') {
-            if(fieledName === 'quantity') {
-                if(a.quantity > b.quantity) {
-                    return -1;
-                }
-            } else if(fieledName === 'price') {
-                if(a.price > b.price) {
-                    return -1;
-                }
-            } else if(fieledName === 'name') {
-                if(a.name > b.name) {
-                    return -1;
-                }
-            }
+            break;
+            default: return 0
+
         }
     }
 }
