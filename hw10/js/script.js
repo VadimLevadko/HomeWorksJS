@@ -1,15 +1,8 @@
-console.log(isBetween(3)(6))
+console.log([1,2,3,4,5,6,7,8,9,10].filter(isBetween(3,6)))
 
-function isBetween(min) {
-    return function(max) {
-        const array = [1,2,3,4,5,6,7,8,9,10]
-        const result = []
-        for(let i = 0; i < array.length; i++) {
-            if(i >= min && i <= max) {
-                result.push(array[i - 1])
-            }
-        }
-        return result
+function isBetween(min, max) {
+    return function(num)  {
+        return num >= min && num <= max
     }
 }
 
@@ -69,18 +62,45 @@ function calculation(operation) {
 
 
 const products = [
-    {name: 'Product 3', quantity: 22, price: 35},
     {name: 'Product 1', quantity: 10, price: 25},
-    {name: 'Product 2', quantity: 3, price: 55}
+    {name: 'Product 2', quantity: 3, price: 55},
+    {name: 'Product 3', quantity: 22, price: 35}
 ]
 
-console.log(sortByField(products))
+products.sort(sortByField('quantity', 'desc'))
 
-function sortByField(array) {
-    const result = array.sort(function(a, b) {
-        if(a.name < b.name) {
-            return -1;
+function sortByField(fieledName, sortType) {
+    return function(a, b) {
+        if(sortType === 'desc') {
+            if(fieledName === 'quantity') {
+                if(a.quantity < b.quantity) {
+                    return -1;
+                }
+            } else if(fieledName === 'price') {
+                if(a.price < b.price) {
+                    return -1;
+                }
+            } else if(fieledName === 'name') {
+                if(a.name < b.name) {
+                    return -1;
+                }
+            }
+        } else if(sortType === 'asc') {
+            if(fieledName === 'quantity') {
+                if(a.quantity > b.quantity) {
+                    return -1;
+                }
+            } else if(fieledName === 'price') {
+                if(a.price > b.price) {
+                    return -1;
+                }
+            } else if(fieledName === 'name') {
+                if(a.name > b.name) {
+                    return -1;
+                }
+            }
         }
-    })
-    return result
+    }
 }
+
+console.log(products)
