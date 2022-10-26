@@ -30,11 +30,9 @@ console.log(someAction(newArray))
 
 function someAction(array) {
 
-  const test1 = []
+  const result = []
 
   for(let i = 0; i < array.length; i++) {
-
-    const result = test1
 
     if(typeof array[i] === 'string') {
 
@@ -50,9 +48,24 @@ function someAction(array) {
     }
   }
 
-return test1.join('')
+return result.join('')
 }
 
+
+// function getWorld(object) {
+//   const result = []
+//   const values = Object.values(object)
+
+//   values.forEach(value => {
+//     if(typeof value === 'string' && value.toUpperCase()=== value) {
+//       result.push(value)
+//     } else if(value && typeof value === 'object') {
+//       getWorld(value) && result.push(getWorld(value))
+//     }
+//   })
+
+//   return result.flat(Infinity).join('')
+// }
 
 
 
