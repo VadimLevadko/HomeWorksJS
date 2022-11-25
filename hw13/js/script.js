@@ -1,40 +1,67 @@
-// for (let i = 0; i < test.length; i++) {
-    
-// }
+const boxes = document.querySelectorAll('.box')
 
-const plus = document.querySelectorAll('div > button.plus')
-const min = document.querySelectorAll('div > button.minus')
-
-const test = document.querySelectorAll('.box')
-
-
-
-funcTest(plus, min, test)
-
-function funcTest(plus, min, box) {
-
-    let first = 0
-    let dd = document.querySelectorAll('div > p')
-
-    plus.forEach(btn => {
-        btn.addEventListener('click', function() {
-            if(first < 3) {
-                dd[0].textContent = first += 1
-            }
-        })
-    })
-
-    min.forEach(btn => {
-        btn.addEventListener('click', function() { 
-            if(first > 0) {
-                dd[0].textContent = first -= 1
-            }
-        })
-    })
-
-    box.forEach((box, i) => {
-        box.addEventListener('click', function() {
-            
-        })
-    })
+const numArr = []
+for(let i = 0; i < boxes.length; i++) {
+    numArr.push(0)
 }
+
+boxes.forEach((box, i) => {
+    box.addEventListener('click', function() {
+        let p = box.querySelector('p')
+        let boxTarget = event.target
+        getResult(boxTarget, i, p)
+    })
+})
+
+function getResult(target, i, p) {
+    if(target.dataset.type === "plus") {
+        p.textContent = numArr[i] += 1
+    } else if(target.dataset.type === "minus") {
+        p.textContent = numArr[i] -= 1
+    }
+}
+
+
+
+
+
+// const $numbers = document.querySelectorAll('#number .operator');
+// $numbers.forEach(operator => {
+//     operator.addEventListener('click', function () {
+//         const $thisParent = this.parentElement;
+//         let numVal = +($thisParent.querySelector('.number').innerHTML);
+//         if (this.classList.contains('plus')) {
+//             numVal++;
+//         } else if (this.classList.contains('minus')) {
+//             numVal--;
+//         }
+//         $thisParent.querySelector('.number').innerHTML = numVal;
+//     });
+// });
+
+
+// --------------------------------------------------------------------------------------------------------------------
+
+const parent = document.getElementById('boxes')
+const colors = document.querySelectorAll('#boxes .color-box')
+
+colors.forEach(elem =>{
+    elem.addEventListener('click', function() {
+        const thisElement = this
+        const thisBg = thisElement.style.backgroundColor
+        switch(thisBg) {
+            case '':
+                thisElement.style.backgroundColor = 'green'
+                break;
+            case 'green':
+                thisElement.style.backgroundColor = 'blue'
+                break;
+            case 'blue':
+                thisElement.style.backgroundColor = 'yellow'
+                break;
+            default:
+                thisElement.style.backgroundColor = ''
+        }
+        parent.appendChild(thisElement);
+    })
+})
