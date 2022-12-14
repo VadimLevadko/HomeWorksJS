@@ -47,6 +47,20 @@
             border: 1px solid black;
             border-radius: 5px;
         }
+        .relative {
+            position: relative;
+        }
+        .hint-wrapper {
+            max-width: max-content;
+            font-size: 12px;
+            padding: 8px;
+            background-color: black;
+            border: 1px solid #FFF;
+            border-radius: 5px;
+            color: #FFF;
+            position: absolute;
+            top: -35px;
+        }
     </style>
 </head>
 <body>
@@ -54,7 +68,9 @@
         <h1 class="title">FAQ page</h1>
         <div class="faq-item">
             <div class="flex items-center content-between">
-                <h3>Lorem ipsum dolor sit.</h3>
+                <div id="title-wrapper" data-hint="This is hint for title 1" class="relative">
+                    <h3 class="h3-title">Lorem ipsum dolor sit.</h3>
+                </div>
                 <button class="button-open">Open</button>
             </div>
             <p hidden class="faq-comment animate__animated animate__fadeIn">
@@ -67,7 +83,9 @@
         </div>
         <div class="faq-item">
             <div class="flex items-center content-between">
-                <h3>How to do this?</h3>
+                <div id="title-wrapper" data-hint="This is hint for title 2" class="relative">
+                    <h3 class="h3-title">How to do this?</h3>
+                </div>
                 <button class="button-open">Open</button>
             </div>
             <p hidden class="faq-comment animate__animated animate__fadeIn">
@@ -80,7 +98,9 @@
         </div>
         <div class="faq-item">
             <div class="flex items-center content-between">
-                <h3>What is a FAQ page?</h3>
+                <div id="title-wrapper" data-hint="This is hint for title 3" class="relative">
+                    <h3 class="h3-title">What is a FAQ page?</h3>
+                </div>
                 <button class="button-open">Open</button>
             </div>
             <p hidden class="faq-comment animate__animated animate__fadeIn">
@@ -93,7 +113,9 @@
         </div>
         <div class="faq-item">
             <div class="flex items-center content-between">
-                <h3>Do you need a FAQ page?.</h3>
+                <div id="title-wrapper" data-hint="This is hint for title 4" class="relative">
+                    <h3 class="h3-title">Do you need a FAQ page?</h3>
+                </div>
                 <button class="button-open">Open</button>
             </div>
             <p hidden class="faq-comment animate__animated animate__fadeIn">
@@ -106,7 +128,9 @@
         </div>
         <div class="faq-item">
             <div class="flex items-center content-between">
-                <h3>How to create an effective FAQ page</h3>
+                <div id="title-wrapper" data-hint="This is hint for title 5" class="relative">
+                    <h3 class="h3-title">How to create an effective FAQ page</h3>
+                </div>
                 <button class="button-open">Open</button>
             </div>
             <p hidden class="faq-comment animate__animated animate__fadeIn">
@@ -119,7 +143,9 @@
         </div>
         <div class="faq-item">
             <div class="flex items-center content-between">
-                <h3>One of the most effective</h3>
+                <div id="title-wrapper" data-hint="This is hint for title 6" class="relative">
+                    <h3 class="h3-title">One of the most effective.</h3>
+                </div>
                 <button class="button-open">Open</button>
             </div>
             <p hidden class="faq-comment animate__animated animate__fadeIn">
