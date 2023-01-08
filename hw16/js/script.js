@@ -1,32 +1,57 @@
-const comments = $('.faq-comment').hide()
-
 $(document).ready(function() {
-    $('.faq-item').each(function() {
+    $('.tabs-btn').each(function() {
         if(location.hash === $(this).attr('id')) {
-            $(this).children('.faq-comment').show()
-            $(this).find('.button-open').text('Close')
+            $('.tabs-btn.active').removeClass('active')
+            $(this).addClass('active')
+            showComment($(this).attr('id'))
         }
     })
 })
 
-const buttons = $('.button-open').each(function(i) {
+const tabsBtn = $('.tabs-btn').each(function() {
+    $(this).click(function() {
+        tabsBtn.removeClass('active')
+        $(this).addClass('active')
+        showComment($(this).attr('id'))
+        location.hash = $(this).attr('id')
+    })
+})
+
+function showComment(elemId) {
+    $('.tabs-comment').each(function() {
+        if($(this).data('target') === elemId) {
+            allCommentsHide()
+            $(this).show()
+        }
+    })
+}
+
+function allCommentsHide() {
+    $('.tabs-comment').hide()
+}
+
+// --------------------------------------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------------
+
+const comments = $('.faq-comment').hide()
+
+const buttons = $('.button-open').each(function() {
     $(this).click(function() {
         const parent = $(this).parent()
         const preParent = parent.parent()
         const comment = preParent.find('.faq-comment')
         
         if(comment.css('display') === 'none') {
-            hiddenElem()
-            location.hash = preParent.attr('id')
+            hiddenElem(comments, buttons)
             $(this).text('Close')
             comment.show()
         } else {
-            hiddenElem()
+            hiddenElem(comments, buttons)
         }
     })
 })
 
-function hiddenElem() {
+function hiddenElem(comments, buttons) {
     comments.hide()
     buttons.text('Open')
 }

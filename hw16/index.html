@@ -6,65 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <style>
-        *, ::before, ::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: sans-serif;
-        }
-        .flex {
-            display: flex;
-        }
-        .items-center {
-            align-items: center;
-        }
-        .content-between {
-            justify-content: space-between;
-        }
-        .title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .faq-item {
-            padding: 10px 0;
-        }
-        .faq-item + .faq-item {
-            margin-top: 20px;
-            border-top: 2px solid gray;
-        }
-        .faq-comment {
-            margin-top: 10px;
-            letter-spacing: 0.1em;
-            font-family: serif;
-        }
-        .button-open {
-            padding: 4px;
-            border: 1px solid black;
-            border-radius: 5px;
-        }
-        .relative {
-            position: relative;
-        }
-        .hint-wrapper {
-            max-width: max-content;
-            font-size: 12px;
-            padding: 8px;
-            background-color: black;
-            border: 1px solid #FFF;
-            border-radius: 5px;
-            color: #FFF;
-            position: absolute;
-            top: -35px;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <div class="container">
+        <div class="tab">
+            <ul class="tabs-btn-wrapper flex">
+                <li id="#home" class="tabs-btn active"><button>Home</button></li>
+                <li id="#profile" class="tabs-btn"><button>Profile</button></li>
+                <li id="#contact" class="tabs-btn"><button>Contanct</button></li>
+            </ul>
+            <div class="tabs-content">
+                <p class="tabs-comment animate__animated animate__fadeIn" data-target="#home">
+                    1 This is some placeholder content the Home tab's associated content. 
+                    Clicking another tab will toggle the visibility of this one for the next. 
+                    The tab JavaScript swaps classes to control the content visibility and styling. 
+                    You can use it with tabs, pills, and any other .nav-powered navigation.
+                </p>
+                <p hidden class="tabs-comment animate__animated animate__fadeIn" data-target="#profile">
+                    2 This is some placeholder content the Home tab's associated content. 
+                    Clicking another tab will toggle the visibility of this one for the next. 
+                    The tab JavaScript swaps classes to control the content visibility and styling. 
+                    You can use it with tabs, pills, and any other .nav-powered navigation.
+                </p>
+                <p hidden class="tabs-comment animate__animated animate__fadeIn" data-target="#contact">
+                    3 This is some placeholder content the Home tab's associated content. 
+                    Clicking another tab will toggle the visibility of this one for the next. 
+                    The tab JavaScript swaps classes to control the content visibility and styling. 
+                    You can use it with tabs, pills, and any other .nav-powered navigation.
+                </p>
+            </div>
+        </div>
         <h1 class="title">FAQ page</h1>
         <div id="#home" class="faq-item">
             <div class="flex items-center content-between">

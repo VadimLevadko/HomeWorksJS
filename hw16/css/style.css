@@ -1,0 +1,83 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+ul {
+    list-style: none;
+}
+.tab {
+    margin-top: 120px;
+    margin-bottom: 40px;
+}
+.tabs-btn button {
+    font-size: 22px;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    padding: 14px 16px;
+}
+.tabs-btn-wrapper {
+    background-color: #f1f1f1;
+    border: 1px solid black;
+}
+.tabs-content {
+    padding: 6px 12px;
+    border: 1px solid black;
+    border-top: none;
+}
+.tabs-comment {
+    font-size: 18px;
+}
+.active {
+    background-color: lightgray;
+}
+.flex {
+    display: flex;
+}
+.items-center {
+    align-items: center;
+}
+.content-between {
+    justify-content: space-between;
+}
+.title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.faq-item {
+    padding: 10px 0;
+}
+.faq-item + .faq-item {
+    margin-top: 20px;
+    border-top: 2px solid gray;
+}
+.faq-comment {
+    margin-top: 10px;
+    letter-spacing: 0.1em;
+    font-family: serif;
+}
+.button-open {
+    padding: 4px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.relative {
+    position: relative;
+}
+.hint-wrapper {
+    max-width: max-content;
+    font-size: 12px;
+    padding: 8px;
+    background-color: black;
+    border: 1px solid #FFF;
+    border-radius: 5px;
+    color: #FFF;
+    position: absolute;
+    top: -35px;
+}
